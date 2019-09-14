@@ -1,0 +1,101 @@
+body {
+    font-family: sans-serif;
+    color: white;
+    background-image: url("aa.jpg");
+
+}
+
+
+
+.score {
+    display: flex;
+    justify-content: space-around;
+
+
+}
+
+.score h3 {
+    font-size: 30px;
+}
+
+.score p {
+    font-size: 23px;
+
+    text-align: center;
+}
+
+.intro {
+    height: 50vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 30px;
+    transition: opacity 0.8s ease;    
+}
+
+.intro button {
+    height: 50px;
+    width: 200px;
+    background-color: red;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+}
+
+
+.winner {
+    text-align: center;
+}
+
+.preferences {
+    display: flex;
+    justify-content: space-around;
+
+
+}
+
+.preferences button {
+    height: 50px;
+    width: 200px;
+    background-color: red;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.player_hand{
+    transform:rotateY(180deg);
+}
+
+div.fadeOut{
+    opacity: 0;
+    pointer-events: none;
+}
+
+div.fadeIn{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.matchUp{
+
+    transition: opacity 0.5s ease 0.5s;    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
