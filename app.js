@@ -94,58 +94,58 @@ function game() {
 
         });
 
+ // Comparing hands
+ function compareHands(cChoice, pChoice) {
+    let winner = document.querySelector(".winner");
+
+    //check for tie
+    if (pChoice === cChoice) {
+
+        winner.textContent = " Ohh tie !"
+        return;
+    }
+
+    //  check for rock
+    if (pChoice === "Rock") {
+        if (cChoice === "Scissors") {
+            winner.textContent = " Good job Lets do it again !"
+            return;
+        } else {
+            winner.textContent = " Hahahahahahah Loser !"
+            return;
+        }
+    }
+
+    //chek for paper          
+    if (pChoice === "Paper") {
+        if (cChoice === "Rock") {
+            winner.textContent = " Good job Lets do it again !"
+            return;
+        } else {
+            winner.textContent = " Hahahahahahah Loser !"
+            return;
+        }
+    }
+
+    //check for scissors
+    if (pChoice === "Scissors") {
+        if (cChoice === "Paper") {
+            winner.textContent = " Good job Lets do it again !"
+            return;
+        } else {
+            winner.textContent = " Hahahahahahah Loser !"
+            return;
+        }
+    }
+}
 
        
     }
-     // Comparing hands
-     function compareHands(cChoice, pChoice) {
-        let winner = document.querySelector(".winner");
-
-        //check for tie
-        if (pChoice === cChoice) {
-
-            winner.textContent = " Ohh tie !"
-            return;
-        }
-
-        //  check for rock
-        if (pChoice === "Rock") {
-            if (cChoice === "Scissors") {
-                winner.textContent = " Good job Lets do it again !"
-                return;
-            } else {
-                winner.textContent = " Hahahahahahah Loser !"
-                return;
-            }
-        }
-
-        //chek for paper          
-        if (pChoice === "Paper") {
-            if (cChoice === "Rock") {
-                winner.textContent = " Good job Lets do it again !"
-                return;
-            } else {
-                winner.textContent = " Hahahahahahah Loser !"
-                return;
-            }
-        }
-
-        //check for scissors
-        if (pChoice === "Scissors") {
-            if (cChoice === "Paper") {
-                winner.textContent = " Good job Lets do it again !"
-                return;
-            } else {
-                winner.textContent = " Hahahahahahah Loser !"
-                return;
-            }
-        }
-    }
-
+    
     // Call all inner functions over here to make them work
     startGame();
     playMatch();
-    compareHands();
+ 
 }
 
 //to start the game
