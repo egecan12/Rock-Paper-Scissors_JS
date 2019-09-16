@@ -80,7 +80,7 @@ function game() {
         scissorsBtn.addEventListener("click", function scisPick() {
             playerChoice = "Scissors";
             console.log(playerChoice);
-            player_hand.src = "Scissors.png";
+            player_hand.src = "scissors.png";
 
             if(pcChoice === "Rock"){
                 winner.textContent = " Hahahahahahha you are the loser"   
