@@ -26,7 +26,6 @@ function game() {
         const paperBtn = document.querySelector(".paper");
         const scissorsBtn = document.querySelector(".scissors");
 
-        const preferences = document.querySelectorAll(".preferences button");
         const player_hand = document.querySelector(".player_hand");
         const computer_hand = document.querySelector(".pc_hand");
         let winner = document.querySelector(".winner");
@@ -34,28 +33,32 @@ function game() {
         let cScore = document.querySelector(".cScore");
 
 
-        const computerOptions = ["Rock", "Paper", "Scissors"];
-
-        let randomNumber = Math.floor(Math.random() * 3);
-
-        let pcChoice = computerOptions[randomNumber];
-
 
         rockBtn.addEventListener("click", function rockPick() {
             playerChoice = "Rock";
             console.log(playerChoice);
             player_hand.src = "rock.png";
 
+            const computerOptions = ["Rock", "Paper", "Scissors"];
+
+            let randomNumber = Math.floor(Math.random() * 3);
+
+            let pcChoice = computerOptions[randomNumber];
+
             if (pcChoice === "Rock") {
+                computer_hand.src = "rock.png";
                 winner.textContent = " Oh tie "
-                
+
 
             } else if (pcChoice === "Paper") {
+
+                computer_hand.src = "paper.png";
                 winner.textContent = " Hahahahahahah Loser !"
                 computerScore = computerScore + 1;
                 cScore.innerHTML = computerScore
 
             } else {
+                computer_hand.src = "scissors.png";
                 winner.textContent = " Good Job";
                 playerScore = playerScore + 1;
                 pScore.innerHTML = playerScore
@@ -68,15 +71,24 @@ function game() {
             console.log(playerChoice);
             player_hand.src = "paper.png";
 
+            const computerOptions = ["Rock", "Paper", "Scissors"];
+
+            let randomNumber = Math.floor(Math.random() * 3);
+
+            let pcChoice = computerOptions[randomNumber];
+
             if (pcChoice === "Rock") {
+                computer_hand.src = "rock.png";
                 winner.textContent = " Good job"
                 playerScore = playerScore + 1;
                 pScore.innerHTML = playerScore
 
             } else if (pcChoice === "Paper") {
+                computer_hand.src = "paper.png";
                 winner.textContent = " It is tie lets try again"
 
             } else {
+                computer_hand.src = "scissors.png";
                 winner.textContent = " Hahaahahahah you are the loser";
                 computerScore = computerScore + 1;
                 cScore.innerHTML = computerScore
@@ -89,49 +101,31 @@ function game() {
             console.log(playerChoice);
             player_hand.src = "scissors.png";
 
+            const computerOptions = ["Rock", "Paper", "Scissors"];
+
+            let randomNumber = Math.floor(Math.random() * 3);
+
+            let pcChoice = computerOptions[randomNumber];
+
             if (pcChoice === "Rock") {
+                computer_hand.src = "rock.png";
                 winner.textContent = " Hahahahahahha you are the loser"
-                computerScore = computerScore+1;
+                computerScore = computerScore + 1;
                 cScore.innerHTML = computerScore
 
             } else if (pcChoice === "Paper") {
+                computer_hand.src = "paper.png";
                 winner.textContent = " Nice work Johnny"
                 playerScore = playerScore + 1;
                 pScore.innerHTML = playerScore
 
             } else {
+                computer_hand.src = "scissors.png";
                 winner.textContent = " Tie Tie Tie !!!!";
 
             }
 
         })
-
-
-        //buttons
-        preferences.forEach(preference => {
-            preference.addEventListener('click', getTheImage);
-            preference.addEventListener('click', compareHands);
-
-        });
-
-        
-
-        function getTheImage() {
-
-            switch (pcChoice) {
-                case "Paper":
-                    computer_hand.src = "paper.png";
-                    break;
-                case "Rock":
-                    computer_hand.src = "rock.png";
-                    break;
-                case "Scissors":
-                    computer_hand.src = "scissors.png";
-                default:
-                    break;
-            }
-
-        }
 
 
     }
