@@ -48,7 +48,7 @@ function game() {
 
             if (pcChoice === "Rock") {
                 winner.textContent = " Oh tie "
-
+                
 
             } else if (pcChoice === "Paper") {
                 winner.textContent = " Hahahahahahah Loser !"
@@ -114,12 +114,7 @@ function game() {
 
         });
 
-        //Computer options
-
-
-        compareHands(pcChoice, playerChoice);
-
-
+        
 
         function getTheImage() {
 
@@ -136,50 +131,6 @@ function game() {
                     break;
             }
 
-        }
-
-
-        // Comparing hands
-        function compareHands(cChoice, pChoice) {
-
-            //check for tie
-            if (pChoice === cChoice) {
-
-                winner.textContent = " Ohh tie !"
-                return;
-            }
-            //  check for rock
-            else if (pChoice === "Rock") {
-                if (cChoice === "Scissors") {
-                    winner.textContent = " Good job Lets do it again !"
-                    return;
-                } else {
-                    winner.textContent = " Hahahahahahah Loser !"
-                    return;
-                }
-            }
-
-            //check for paper          
-            if (pChoice === "Paper") {
-                if (cChoice === "Rock") {
-                    winner.textContent = " Good job Lets do it again !"
-                    return;
-                } else {
-                    winner.textContent = " Hahahahahahah Loser !"
-                    return;
-                }
-            }
-
-            //check for scissors
-            if (pChoice === "Scissors") {
-                if (cChoice === "Paper") {
-                    winner.textContent = " Good job Lets do it again !"
-                    return;
-                } else {
-                    winner.textContent = " Hahahahahahah Loser !"
-                    return;
-                }
-            }
         }
 
 
