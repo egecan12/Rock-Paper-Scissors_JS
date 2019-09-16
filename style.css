@@ -149,3 +149,8 @@ div.fadeIn {
         transform: translateY(0px);
     }
 }
+
+footer{
+    position: relative;
+    top:70px;
+}
