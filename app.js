@@ -30,6 +30,8 @@ function game() {
         const player_hand = document.querySelector(".player_hand");
         const computer_hand = document.querySelector(".pc_hand");
         let winner = document.querySelector(".winner");
+        let pScore = document.querySelector(".pScore");
+        let cScore = document.querySelector(".cScore");
 
 
         const computerOptions = ["Rock", "Paper", "Scissors"];
@@ -44,17 +46,19 @@ function game() {
             console.log(playerChoice);
             player_hand.src = "rock.png";
 
-            if(pcChoice === "Rock"){
-                winner.textContent = " Oh tie try again"
+            if (pcChoice === "Rock") {
+                winner.textContent = " Oh tie "
 
-            }
-            else if (pcChoice === "Paper"){
+
+            } else if (pcChoice === "Paper") {
                 winner.textContent = " Hahahahahahah Loser !"
+                computerScore = computerScore + 1;
+                cScore.innerHTML = computerScore
 
-            }
-            else{
+            } else {
                 winner.textContent = " Good Job";
-
+                playerScore = playerScore + 1;
+                pScore.innerHTML = playerScore
             }
 
         })
@@ -63,16 +67,19 @@ function game() {
             playerChoice = "Paper";
             console.log(playerChoice);
             player_hand.src = "paper.png";
-           
-            if(pcChoice === "Rock"){
-                winner.textContent = " Good job"   
-            }
-            else if (pcChoice === "Paper"){
+
+            if (pcChoice === "Rock") {
+                winner.textContent = " Good job"
+                playerScore = playerScore + 1;
+                pScore.innerHTML = playerScore
+
+            } else if (pcChoice === "Paper") {
                 winner.textContent = " It is tie lets try again"
 
-            }
-            else{
+            } else {
                 winner.textContent = " Hahaahahahah you are the loser";
+                computerScore = computerScore + 1;
+                cScore.innerHTML = computerScore
 
             }
         })
@@ -82,14 +89,17 @@ function game() {
             console.log(playerChoice);
             player_hand.src = "scissors.png";
 
-            if(pcChoice === "Rock"){
-                winner.textContent = " Hahahahahahha you are the loser"   
-            }
-            else if (pcChoice === "Paper"){
-                winner.textContent = " Nice work Johnny"
+            if (pcChoice === "Rock") {
+                winner.textContent = " Hahahahahahha you are the loser"
+                computerScore = computerScore+1;
+                cScore.innerHTML = computerScore
 
-            }
-            else{
+            } else if (pcChoice === "Paper") {
+                winner.textContent = " Nice work Johnny"
+                playerScore = playerScore + 1;
+                pScore.innerHTML = playerScore
+
+            } else {
                 winner.textContent = " Tie Tie Tie !!!!";
 
             }
@@ -125,7 +135,7 @@ function game() {
                 default:
                     break;
             }
-            
+
         }
 
 
