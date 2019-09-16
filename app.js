@@ -21,7 +21,6 @@ function game() {
     function playMatch() {
 
 
-        //3 buttons
         const rockBtn = document.querySelector(".rock");
         const paperBtn = document.querySelector(".paper");
         const scissorsBtn = document.querySelector(".scissors");
@@ -32,18 +31,36 @@ function game() {
         let pScore = document.querySelector(".pScore");
         let cScore = document.querySelector(".cScore");
 
+        //this is for the animation part
+        const hands = document.querySelectorAll(".hands img");
 
+        hands.forEach(hand => {
+            hand.addEventListener('animationend', function () {
+                computer_hand.style.animation = "";
+                player_hand.style.animation = "";
+            })
+        });
+        //
+
+        //buttons eventlisteners start here
 
         rockBtn.addEventListener("click", function rockPick() {
+
             playerChoice = "Rock";
             console.log(playerChoice);
             player_hand.src = "rock.png";
+            computer_hand.style.animation = 'computerShake 2s ease';
+            player_hand.style.animation = 'playerShake 2s ease';
+
+
+
 
             const computerOptions = ["Rock", "Paper", "Scissors"];
 
             let randomNumber = Math.floor(Math.random() * 3);
 
             let pcChoice = computerOptions[randomNumber];
+
 
             if (pcChoice === "Rock") {
                 computer_hand.src = "rock.png";
@@ -70,6 +87,9 @@ function game() {
             playerChoice = "Paper";
             console.log(playerChoice);
             player_hand.src = "paper.png";
+            player_hand.style.animation = 'playerShake 2s ease';
+            computer_hand.style.animation = 'computerShake 2s ease';
+
 
             const computerOptions = ["Rock", "Paper", "Scissors"];
 
@@ -100,6 +120,9 @@ function game() {
             playerChoice = "Scissors";
             console.log(playerChoice);
             player_hand.src = "scissors.png";
+            player_hand.style.animation = 'playerShake 2s ease';
+            computer_hand.style.animation = 'computerShake 2s ease';
+
 
             const computerOptions = ["Rock", "Paper", "Scissors"];
 
